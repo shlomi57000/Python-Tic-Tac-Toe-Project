@@ -142,6 +142,7 @@ def Check_Winning_Move (tic,symbol):
 def play_game (player1,player2,tic) :
     w = 0
     win = []
+    # loop for winning
     while w != 1:
         win = Check_Winning_Move(tic,player1)
         if win != []:
@@ -169,9 +170,12 @@ def play_game (player1,player2,tic) :
         elif t == 1 :
             print(f'There is a tie ! ')
             break
+
+# Game 1Vcomp
 def play_game_with_comp (player1,player2,tic) :
     w = 0
     win = []
+    # loop for winning
     while w != 1:
         win = Check_Winning_Move(tic, player1)
         if win != []:
@@ -202,6 +206,7 @@ def play_game_with_comp (player1,player2,tic) :
 
 def play_game_comp_with_comp (player1,player2,tic) :
     w = 0
+    # loop for winning
     while w != 1:
         win = Check_Winning_Move(tic, player1)
         if win != []:
@@ -230,6 +235,7 @@ def play_game_comp_with_comp (player1,player2,tic) :
             print(f'There is a tie ! ')
             break
 
+# function for decide if i want to plat again
 def play_again (v):
     answer = 0
     while answer != 'y' and answer != 'Y' and answer != 'n' and answer != 'N':
@@ -239,6 +245,7 @@ def play_again (v):
         return - 1
     else:
         return v
+
 #Flow
 
 import random
@@ -296,7 +303,7 @@ while v < 0 or v > 5:
         play_game_comp_with_comp(player1, player2, tic)
         v = play_again (v)
     # Exit game
-    elif v == 4:
+    elif v == 5 or v == 4:
         print('exiting game.....')
         break
 
